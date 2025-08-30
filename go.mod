@@ -1,5 +1,5 @@
-module github.com/blog-api
+module blog-api
 
-go 1.21.1
+go 1.25
 
-require github.com/gorilla/mux v1.8.1 // indirect
+require github.com/gorilla/mux v1.8.1
