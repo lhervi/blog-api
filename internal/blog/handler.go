@@ -5,11 +5,11 @@ import (
 )
 
 func CreatePostHandler(w http.ResponseWriter, r *http.Request) {
-	w.writeHeader(http.Statuscreated)
-	w.write([]byte("Post creado con éxito"))
+	w.WriteHeader(http.StatusCreated)
+	w.Write([]byte("Post creado con éxito"))
 }
 
-func GetPostHandler(w http.ResponseWriter, r *http.Request) {
-	w.writeHeader(http.StatusOk)
-	w.write([]byte("Lista de Post"))
+func GetPostsHandler(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Lista de Post"))
 }
