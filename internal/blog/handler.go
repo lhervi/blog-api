@@ -29,8 +29,7 @@ func CreatePostHandler(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(newPost)
 }
 
-func GetPostsHandler(w http.ResponseWriter, r *http.Request)
-{
+func GetPostsHandler(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 	w.Write([]byte("Lista de Post"))
 }
