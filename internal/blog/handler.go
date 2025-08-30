@@ -19,7 +19,7 @@ func CreatePostHandler(w http.ResponseWriter, r *http.Request) {
 	}
 
 	//Generar un ID simple para el nuevo post
-	newPost.ID = fmt.Sprint("post-%d", len(posts)+1)
+	newPost.ID = fmt.Sprintf("post-%d", len(posts)+1)
 	newPost.CreatedAt = time.Now()
 
 	//Añadir el nuevo post a la lista
@@ -30,6 +30,8 @@ func CreatePostHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func GetPostsHandler(w http.ResponseWriter, r *http.Request) {
+	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(http.StatusOK)
-	w.Write([]byte("Lista de Post"))
+	//w.Write([]byte("Lista de Post"))
+	json.NewEncoder(w).Encode(posts)
 }
